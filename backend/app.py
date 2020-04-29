@@ -1,16 +1,30 @@
 from flask import Flask
+from flask_cors import CORS
 from flask_restful import Resource, Api, reqparse
 from Model.artists import ArtistModel
 from Model.event import EventModel  #also import table created with many-to-many relationship
 from flask_migrate import Migrate
+from flask import render_template
 from db import db
-app = Flask(__name__)
+
+app = Flask(__name__,
+         static_folder="../frontend/dist/static",
+         template_folder="../frontend/dist")
+
+app.config.from_object(__name__)
+
+api = Api(app)
+
+CORS(app, resources={r'/*': {'origins': '*'}})
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 migrate = Migrate(app, db)
 db.init_app(app)
-api = Api(app)
 
+@app.route('/')
+def render_vue():
+    return render_template("index.html")
 
 class Artist(Resource):
     def get(self, id):
@@ -125,7 +139,7 @@ class Event(Resource):
 class ArtistList(Resource):
     def get(self):
         artists = ArtistModel.query.all()
-        return list(map(lambda x: x.json(), artists)), 200 if artists else 404
+        return {'artists' : list(map(lambda x: x.json(), artists))}, 200 if artists else 404
 
     def post(self):
         return {'message': "Not developed yet"}, 201
@@ -140,7 +154,7 @@ class ArtistList(Resource):
 class EventList(Resource):
     def get(self):
         events = EventModel.query.all()
-        return list(map(lambda x: x.json(), events)), 200 if events else 404
+        return {'events' :list(map(lambda x: x.json(), events))}, 200 if events else 404
 
     def post(self):
         return {'message': "Not developed yet"}, 201
@@ -156,7 +170,7 @@ class EventArtistsList(Resource):
         event = EventModel.find_by_id(id)
         if event:
             artists = event.artists
-            return list(map(lambda x: x.json(), artists)), 200 if artists else 404
+            return {'artists' : list(map(lambda x: x.json(), artists))}, 200 if artists else 404
         else:
             return {'message': "Event not found"}, 404
 
@@ -229,7 +243,7 @@ class EventArtist(Resource):
 class ArtistEventsList(Resource):
     def get(self, id):
         events = ArtistModel.find_by_id(id).events
-        return list(map(lambda x: x.json(), events)), 200 if events else 404
+        return {'events' : list(map(lambda x: x.json(), events))}, 200 if events else 404
 
     def post(self, id):
         return {'message': "Not developed yet"}, 201
