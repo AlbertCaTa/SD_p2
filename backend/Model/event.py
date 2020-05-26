@@ -14,20 +14,20 @@ class EventModel(db.Model):
     price = db.Column(db.Integer, nullable=False)
     total_available_tickets = db.Column(db.Integer, nullable=False)
 
+
     def __str__(self):
         return str(self.id) + self.name + self.city
 
     def json(self):
         return {
-            "event": {
                 "id": self.id,
                 "name": self.name,
                 "place": self.place,
                 "city": self.city,
                 "date": self.date,
                 "price": self.price,
-                "total_available_tickets": self.total_available_tickets
-            }
+                "total_available_tickets": self.total_available_tickets,
+                'artists' : list(map(lambda x: x.json(), list(self.artists)))
         }
 
     def save_to_db(self):
@@ -50,6 +50,10 @@ class EventModel(db.Model):
             return EventModel.query.get(id)
         else:
             return None
+
+    @classmethod
+    def find_all(cls):
+        return EventModel.query.all()
 
     def add_artist(self, modelArtist):
         self.artists.append(modelArtist)

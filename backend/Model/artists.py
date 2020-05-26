@@ -1,5 +1,3 @@
-import json
-
 from db import db
 
 genres = ('REGGAE', 'POP', 'TRAP', 'HIP HOP', 'ROCK', 'INDIE', 'HEAVY', 'ELECTRONIC', 'OTHER')
@@ -20,7 +18,7 @@ class ArtistModel(db.Model):
         return str(self.id) + self.name + self.country
 
     def json(self):
-        return {"artist":{"id": self.id,"name": self.name,"country": self.country,"genre": self.genre}}
+        return {"id": self.id,"name": self.name,"country": self.country,"genre": self.genre}
 
     @classmethod
     def find_by_id(cls, id):
@@ -28,6 +26,10 @@ class ArtistModel(db.Model):
             return ArtistModel.query.get(id)
         else:
             return None
+
+    @classmethod
+    def find_all(cls):
+        return ArtistModel.query.all()
 
     def save_to_db(self):
         if self.id and ArtistModel.query.get(self.id):
