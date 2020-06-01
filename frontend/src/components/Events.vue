@@ -1,6 +1,8 @@
 <template>
   <div>
     <h1>Events</h1>
+    <button class="btn btn-primary" @click="logIn()">Log in</button>
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4" v-for="(event) in events" :key="event.id">
@@ -56,11 +58,19 @@ export default {
     },
     addToCart (e) {
       this.events_bought.push(e)
+    },
+    logIn () {
+      this.$router.replace({path: '/userlogin'})
     }
   },
   created () {
     this.getEvents()
     console.log('CREATED: ' + JSON.stringify(this.events))
+
+    this.logged = this.$route.query.logged
+    this.username = this.$route.query.username
+    this.is_admin = this.$route.query.is_admin
+    this.token = this.$route.query.token
   }
 }
 </script>
