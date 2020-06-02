@@ -1,9 +1,9 @@
-from Model.event import EventModel  # also import table created with many-to-many relationship
-from Model.account import AccountsModel, auth
-from Model.orders import OrdersModel
-from flask_restful import Resource, Api, reqparse
-
-from flask_httpauth import HTTPBasicAuth
+from models.event import EventModel  # also import table created with many-to-many relationship
+from models.account import AccountsModel, auth
+from models.orders import OrdersModel
+from flask_restful import Resource, reqparse
+from lock import lock
+from db import db
 from flask import g
 
 class Orders(Resource):
@@ -14,28 +14,25 @@ class Orders(Resource):
 
     @auth.login_required(role='user')
     def post(self, username):
-        print("username == g.user.username: {}".format(username == g.user.username))
-        if username == g.user.username:
-            data = self.parser()
-            a = AccountsModel.find_by_username(username)
-            e = EventModel.find_by_id(data['event_id'])
-            if e.total_available_tickets >= data["tickets_bought"]:
-                if a.available_money >= e.price * data["tickets_bought"]:
-                    e.total_available_tickets = EventModel.total_available_tickets - data["tickets_bought"]
-                    a.available_money -= data["tickets_bought"] * e.price
-                    o = OrdersModel(e.id, data["tickets_bought"])
-                    a.orders.append(o)
-                    o.save_to_db()
-                    e.save_to_db()
-                    a.save_to_db()
-                    return {"order": o.json()}, 201
+        data = self.parser()
+        with lock.lock:
+            if username == g.user.username:
+                a = AccountsModel.find_by_username(username)
+                e = EventModel.find_by_id(data['event_id'])
+                if e.total_available_tickets >= data["tickets_bought"]:
+                    if a.available_money >= e.price * data["tickets_bought"]:
+                        e.total_available_tickets = EventModel.total_available_tickets - data["tickets_bought"]
+                        a.available_money -= data["tickets_bought"] * e.price
+                        o = OrdersModel(e.id, data["tickets_bought"])
+                        a.orders.append(o)
+                        db.session.commit()
+                        return {"order": o.json()}, 201
+                    else:
+                        return {'message': 'Not enough money'}, 501
                 else:
-                    return {'message': 'Not enough money'}, 501
+                    return {'message': 'No enough tickets'}, 502
             else:
-                return {'message': 'No enough tickets'}, 502
-
-        else:
-            return {'message' : 'Endpoint username and g.user.username not equal'}, 400
+                return {'message' : 'Endpoint username and g.user.username not equal'}, 400
 
     @auth.login_required(role='admin')
     def delete(self, username):

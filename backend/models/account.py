@@ -1,4 +1,4 @@
-from db import db, secret_key
+from db import db
 from passlib.apps import custom_app_context as pwd_context
 from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer, BadSignature, SignatureExpired)
 from flask_httpauth import HTTPBasicAuth
@@ -89,7 +89,6 @@ class UsernameTakenException(Exception):
 
 @auth.verify_password
 def verify_password(token, password):
-    print("token{}".format(str(token)))
     acc = AccountsModel.verify_auth_token(token)
     if acc:
         g.user = acc
@@ -101,5 +100,4 @@ def verify_password(token, password):
 @auth.get_user_roles
 def get_user_roles(user):
     role = 'admin' if user.is_admin else 'user'
-    print("role {}".format(user.json()))
     return role

@@ -1,4 +1,4 @@
-from Model.event import EventModel
+from models.event import EventModel
 from db import db
 
 

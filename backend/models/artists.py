@@ -11,7 +11,7 @@ class ArtistModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), unique=True, nullable=False)
     country = db.Column(db.String(30), nullable=False)
-    genre = db.Column(db.Enum(*genres), nullable=False)
+    genre = db.Column(db.Enum(*genres, name='genres_types'), nullable=False)
     events = db.relationship('EventModel',secondary=artist_events, backref=db.backref('artists', lazy='dynamic'))
 
     def __str__(self):

@@ -12,23 +12,22 @@ from resources.login import Login
 
 from flask_migrate import Migrate
 from flask import render_template
-from db import db, secret_key
+from db import db
+
+from decouple import config as config_decouple
+from config import config
 
 
+app = Flask(__name__)
+environment = config['development']
+if config_decouple('PRODUCTION', cast=bool, default=False):
+    environment = config['production']
 
-app = Flask(__name__,
-            static_folder="../frontend/dist/static",
-            template_folder="../frontend/dist")
-
-app.config.from_object(__name__)
+app.config.from_object(environment)
 
 api = Api(app)
-
 CORS(app, resources={r'/*': {'origins': '*'}})
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = secret_key
 migrate = Migrate(app, db)
 db.init_app(app)
 

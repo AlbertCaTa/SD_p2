@@ -1,5 +1,5 @@
-from Model.event import EventModel  # also import table created with many-to-many relationship
-from Model.account import AccountsModel, auth
+from models.event import EventModel  # also import table created with many-to-many relationship
+from models.account import AccountsModel, auth
 from flask_restful import Resource, Api, reqparse
 
 from flask_httpauth import HTTPBasicAuth

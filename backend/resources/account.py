@@ -1,4 +1,4 @@
-from Model.account import AccountsModel, auth, AVAILABLE_MONEY, IS_ADMIN
+from models.account import AccountsModel, auth, AVAILABLE_MONEY, IS_ADMIN
 from flask_restful import Resource, Api, reqparse
 
 

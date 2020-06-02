@@ -1,9 +1,6 @@
-from Model.artists import ArtistModel
-from Model.account import AccountsModel, auth
+from models.artists import ArtistModel
+from models.account import AccountsModel, auth
 from flask_restful import Resource, Api, reqparse
-
-from flask_httpauth import HTTPBasicAuth
-from flask import g
 
 class ArtistEventsList(Resource):
     @auth.login_required(role='admin')
