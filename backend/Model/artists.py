@@ -26,6 +26,12 @@ class ArtistModel(db.Model):
             return ArtistModel.query.get(id)
         else:
             return None
+    @classmethod
+    def find_by_name(cls, name):
+        if name:
+            return ArtistModel.query.filter_by(name=name).first()
+        else:
+            return None
 
     @classmethod
     def find_all(cls):

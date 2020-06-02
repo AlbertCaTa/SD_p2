@@ -8,6 +8,7 @@ from flask_httpauth import HTTPBasicAuth
 from flask import g
 
 class Login(Resource):
+    @auth.login_required(role='admin')
     def get(self):
         accounts = AccountsModel.find_all()
         return {'accounts': list(map(lambda x: x.json(), accounts))}, 200 if accounts else 404

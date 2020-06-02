@@ -3,6 +3,7 @@ from flask_restful import Resource, Api, reqparse
 
 
 class Accounts(Resource):
+    @auth.login_required(role='admin')
     def get(self, username):
         account = AccountsModel.find_by_username(username)
         return {'account': account.json()}, 200 if account else 404
@@ -51,6 +52,7 @@ class Accounts(Resource):
         return data
 
 class AccountsList(Resource):
+    @auth.login_required(role='admin')
     def get(self):
         accounts = AccountsModel.find_all()
         return {'accounts': list(map(lambda x: x.json(), accounts))}, 200 if accounts else 404

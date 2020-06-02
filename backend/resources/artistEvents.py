@@ -6,6 +6,7 @@ from flask_httpauth import HTTPBasicAuth
 from flask import g
 
 class ArtistEventsList(Resource):
+    @auth.login_required(role='admin')
     def get(self, id):
         events = ArtistModel.find_by_id(id).events
         return {'events': list(map(lambda x: x.json(), events))}, 200 if events else 404

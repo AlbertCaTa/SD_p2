@@ -24,14 +24,14 @@ class Artist(Resource):
             try:
                 artist.save_to_db()
             except:
-                return {"message": "Error Description"}, 500
+                return {"message": "db error"}, 500
             return artist.json(), 201
 
     @auth.login_required(role='admin')
     def delete(self, id):
         artist = ArtistModel.find_by_id(id)
         if artist:
-            artist.delete_from_db(artist)
+            artist.delete_from_db()
             return {'message': 'Artist deleted'}, 200
         else:
             return {'message': "Artist not found"}, 404

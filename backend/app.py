@@ -47,7 +47,7 @@ api.add_resource(Event, '/event/<int:id>', '/event')
 api.add_resource(EventList, '/events')
 
 api.add_resource(EventArtistsList, '/event/<int:id>/artists')
-api.add_resource(EventArtist, '/event/<int:id_event>/artist/<id_artist>', '/event/<int:id_event>/artist')
+api.add_resource(EventArtist, '/event/<int:id_event>/artist/<int:id_artist>', '/event/<int:id_event>/artist')
 
 api.add_resource(ArtistEventsList, '/artist/<int:id>/events')
 

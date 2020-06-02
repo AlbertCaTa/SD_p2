@@ -31,7 +31,7 @@ class EventModel(db.Model):
         }
 
     def save_to_db(self):
-        if self.id and  EventModel.query.get(self.id):
+        if self.id and EventModel.query.get(self.id):
             db.session.commit()
         else:
             db.session.add(self)

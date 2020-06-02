@@ -7,6 +7,7 @@ from flask_httpauth import HTTPBasicAuth
 from flask import g
 
 class Orders(Resource):
+    @auth.login_required(role='user')
     def get(self, username):
         orders = AccountsModel.find_by_username(username).orders
         return {'orders': list(map(lambda x: x.json(), orders))}, 200 if orders else 404
@@ -56,6 +57,7 @@ class Orders(Resource):
 
 
 class OrdersList(Resource):
+    @auth.login_required(role='admin')
     def get(self, id):
         orders = OrdersModel.find_all()
         return {'orders': list(map(lambda x: x.json(), orders))}, 200 if orders else 404

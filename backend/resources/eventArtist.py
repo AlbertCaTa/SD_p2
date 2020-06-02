@@ -40,9 +40,9 @@ class EventArtist(Resource):
             return {'message': "Event with id [{}] not found".format(id_event)}, 404
 
     @auth.login_required(role='admin')
-    def post(self, id_event, id_artist):
+    def post(self, id_event, id_artist=None):
         data = self.parser()
-        artist = ArtistModel.find_by_id(id_artist)
+        artist = ArtistModel.find_by_id(id_artist) if id_artist else ArtistModel.find_by_name(data['name'])
         event = EventModel.find_by_id(id_event)
         if not event:
             return {'message': "Event with id [{}] not found".format(id_event)}, 404
@@ -62,13 +62,16 @@ class EventArtist(Resource):
     def delete(self, id_event, id_artist):
         event = EventModel.find_by_id(id_event)
         if event:
-            artist = next(filter(lambda x: str(x.id) == str(id_artist), event.artists), None)
-            if artist:
-                event.artists.remove(artist)
-                event.save_to_db()
-                return {'message': "Success"}, 200 if artist else 404
-            else:
-                return {'message': "Artist not found"}, 404
+            for a in event.artists:
+                print("a.id : {}, id_artist: {}, a.id == id_artist: {}".format(a.id,id_artist, a.id == id_artist))
+                print("artist {}".format(type(id_artist)))
+                print("a {}".format(type(a.id)))
+                if a.id == id_artist:
+                    event.artists.remove(a)
+                    event.save_to_db()
+                    return {'message': "Success"}, 200
+
+            return {'message': "Artist with id {} not found".format(id_artist)}, 404
         else:
             return {'message': "Event not found"}, 404
 
