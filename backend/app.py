@@ -40,7 +40,6 @@ def render_vue():
 
 # TODO fix html return codes.
 
-
 api.add_resource(Artist, '/artist/<int:id>', '/artist')
 api.add_resource(ArtistList, '/artists')
 

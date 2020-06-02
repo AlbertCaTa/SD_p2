@@ -1,8 +1,6 @@
 from Model.account import AccountsModel, auth, AVAILABLE_MONEY, IS_ADMIN
 from flask_restful import Resource, Api, reqparse
 
-from flask_httpauth import HTTPBasicAuth
-from flask import g
 
 class Accounts(Resource):
     def get(self, username):

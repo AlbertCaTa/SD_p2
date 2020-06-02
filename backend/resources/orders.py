@@ -6,7 +6,6 @@ from flask_restful import Resource, Api, reqparse
 from flask_httpauth import HTTPBasicAuth
 from flask import g
 
-
 class Orders(Resource):
     def get(self, username):
         orders = AccountsModel.find_by_username(username).orders
@@ -14,6 +13,7 @@ class Orders(Resource):
 
     @auth.login_required(role='user')
     def post(self, username):
+        print("username == g.user.username: {}".format(username == g.user.username))
         if username == g.user.username:
             data = self.parser()
             a = AccountsModel.find_by_username(username)
@@ -28,7 +28,6 @@ class Orders(Resource):
                     e.save_to_db()
                     a.save_to_db()
                     return {"order": o.json()}, 201
-
                 else:
                     return {'message': 'Not enough money'}, 501
             else:

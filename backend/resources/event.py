@@ -12,6 +12,7 @@ class Event(Resource):
             return {'event': event.json()}, 200
         else:
             return {"message": "Not found"}, 404
+
     @auth.login_required(role='admin')
     def post(self, id=None):
         data = self.parser()
@@ -46,7 +47,7 @@ class Event(Resource):
 
         if id and EventModel.find_by_id(id):
             event.delete_from_db()
-            event = EventModel(data['place'], data['city'], data['country'], data['date'], data['price'],
+            event = EventModel(data['name'], data['place'], data['city'], data['date'], data['price'],
                                data['available_tickets'])
             event.save_to_db()
             return {'message': "Success, event added"}, 201
