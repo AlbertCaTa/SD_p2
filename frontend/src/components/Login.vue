@@ -72,14 +72,10 @@ export default {
         })
     },
     getAccount () {
-      const path = `http://localhost:5000/accounts`
+      const path = `http://localhost:5000/account/` + this.username
       axios.get(path)
         .then((res) => {
-          for (let acc of res.data.accounts.values()) {
-            if (acc.username === this.username) {
-              this.is_admin = acc.is_admin
-            }
-          }
+          this.is_admin = res.data.account.is_admin
         })
         .catch((error) => {
           // eslint-disable-next-line

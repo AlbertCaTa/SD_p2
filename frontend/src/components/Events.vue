@@ -23,7 +23,7 @@
         <div class="row">
           <div v-for="e in events" :key="e.id">
             <div id="eventCard" class="card ml-3 mt-3 mb-3 mr-3" style="width: 20rem;">
-              <img class="card-img-top" src="../assets/logo.png" alt="Card image cap">
+              <img class="card-img-top" src="../assets/event.png" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ e.name }}</h5>
                 <h6 class="card-subtitle"> Invited artists :</h6>
@@ -98,7 +98,7 @@
           </div>
 
           <div class="image">
-            <img class="card-img-top" src="../assets/logo.png" alt="Card image cap" width="50" height="50">
+            <img class="card-img-top" src="../assets/artist.png" alt="Card image cap" width="50" height="50">
             {{ item.event_name }}
           </div>
           <div class="quantity">
@@ -181,13 +181,13 @@
               GO TO EVENTS
         </button>
         <button id="editNewArtistBtn" class="btn-primary" type="button" name="button" @click="viewAddNewArtist()">
-              EDIT ARTIST
+              NEW ARTIST
         </button>
         <div class="container-fluid d-flex flex-wrap pt-2 pb-3">
           <div class="row">
             <div v-for="a in artists" :key="a.id">
               <div id="aCard" class="card ml-3 mt-3 mb-3 mr-3" style="width: 20rem;">
-                <img class="card-img-top" src="../assets/logo.png" alt="Card image cap">
+                <img class="card-img-top" src="../assets/artist.png" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{ a.name }}</h5>
                   <p class="card-text">Country : {{ a.country }}</p>
