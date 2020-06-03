@@ -12,10 +12,10 @@
           <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="viewCart()" v-if="!is_admin">
                 VIEW CART
           </button>
-          <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="logIn()">
+          <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="logIn()" v-if="!logged">
                 LOG IN
           </button>
-          <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="logOut()">
+          <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="logOut()" v-if="logged">
                 LOG OUT
           </button>
           <button id="addEventBtn" class="btn-primary btn-sm ml-1" type="button" name="button" @click="viewAddEvent()" v-if="is_admin">
@@ -333,7 +333,8 @@ export default {
         country: '',
         genre: ''
       },
-      is_admin: 1
+      is_admin: 0,
+      logged: 0
     }
   },
   methods: {
