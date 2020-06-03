@@ -1,7 +1,18 @@
 <template>
   <div>
     <div id="login">
-      <h1> LOGIN </h1>
+      <div style="height: 30px"></div>
+      <div>
+        <h1 style="text-align: center;  font-family: 'Oswald', Helvetica, sans-serif;  font-size: 80px;  transform: skewY(-10deg);  letter-spacing: 4px;  word-spacing: -8px;  color: #ff6347;  text-shadow:     -1px -1px 0 firebrick,    -2px -2px 0 firebrick,    -3px -3px 0 firebrick,    -4px -4px 0 firebrick,    -5px -5px 0 firebrick,    -6px -6px 0 firebrick,    -7px -7px 0 firebrick,    -8px -8px 0 firebrick,    -30px 20px 40px dimgrey">
+          LOGIN
+        </h1>
+      </div>
+      <div style="height: 20px"></div>
+      <div style="background-color: #ff6347; height: 35px">
+        <div style="display: inline-block; float:right">
+          <button class="btn btn-primary btn-sm mr-1" @click="backToEvents()">Back to events</button>
+        </div>
+      </div>
       <div class="form-label-group">
         <label for="inputUsername">Username</label>
         <input type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus v-model="username">
@@ -11,12 +22,19 @@
         <label for="inputPassword">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required v-model="password">
       </div>
-      <button class="btn btn-primary" @click="checkLogin()">Sign in</button>
-      <button class="btn btn-primary" @click="viewSignup()">Create Account</button>
-      <button class="btn btn-primary" @click="backToEvents()">Back to events</button>
+      <button class="btn btn-primary btn-sm" @click="checkLogin()">Sign in</button>
+      <button class="btn btn-primary btn-sm" @click="viewSignup()">Create Account</button>
     </div>
     <div id="signup" style="display: none">
-      <h1> SIGN UP </h1>
+      <div style="height: 30px"></div>
+      <div>
+        <h1 style="text-align: center;  font-family: 'Oswald', Helvetica, sans-serif;  font-size: 80px;  transform: skewY(-10deg);  letter-spacing: 4px;  word-spacing: -8px;  color: #ff6347;  text-shadow:     -1px -1px 0 firebrick,    -2px -2px 0 firebrick,    -3px -3px 0 firebrick,    -4px -4px 0 firebrick,    -5px -5px 0 firebrick,    -6px -6px 0 firebrick,    -7px -7px 0 firebrick,    -8px -8px 0 firebrick,    -30px 20px 40px dimgrey">
+          SIGNUP
+        </h1>
+      </div>
+      <div style="height: 20px"></div>
+      <div style="background-color: #ff6347; height: 35px">
+      </div>
       <div class="form-label-group">
         <label for="signupUsername">Username</label>
         <input type="addUserForm.username" id="signupUsername" class="form-control" placeholder="Username" required autofocus v-model="addUserForm.username">
@@ -26,9 +44,9 @@
         <label for="signupPassword">Password</label>
         <input type="password" id="signupPassword" class="form-control" placeholder="Password" required v-model="addUserForm.password">
       </div>
-      <button class="btn btn-primary" @click="checkSignup()">Submit</button>
-      <button class="btn btn-danger" @click="initForm()">Reset</button>
-      <button class="btn btn-secondary" @click="viewLogin()">Cancel</button>
+      <button class="btn btn-primary btn-sm" @click="checkSignup()">Submit</button>
+      <button class="btn btn-danger btn-sm"  @click="initForm()">Reset</button>
+      <button class="btn btn-secondary btn-sm" @click="viewLogin()">Cancel</button>
     </div>
   </div>
 </template>

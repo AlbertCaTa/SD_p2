@@ -12,7 +12,7 @@
           <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="viewCart()" v-if="!is_admin">
                 VIEW CART
           </button>
-          <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="logIn()" v-if="!logged">
+          <button class="btn-primary btn-sm ml-1 mr-1" type="button" name="button" @click="logIn()" v-if="!logged">
                 LOG IN
           </button>
           <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="logOut()" v-if="logged">
