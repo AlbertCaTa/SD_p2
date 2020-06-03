@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37f40782-c415-4406-9764-6001a6d5cdd4" name="Default Changelist" comment="" />
+    <list default="true" id="37f40782-c415-4406-9764-6001a6d5cdd4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/vendor.6cdc6aea2e480c47a92c.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/static/js/vendor.6cdc6aea2e480c47a92c.js.map" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/app.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -169,6 +174,8 @@
       <workItem from="1591136215323" duration="958000" />
       <workItem from="1591137188187" duration="4811000" />
       <workItem from="1591177176415" duration="246000" />
+      <workItem from="1591182784616" duration="184000" />
+      <workItem from="1591182985419" duration="414000" />
     </task>
     <servers />
   </component>
@@ -210,6 +217,10 @@
     <state x="429" y="209" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589373165955" />
     <state x="429" y="209" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591137209229" />
     <state x="518" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog/78.0.1970.1152@78.0.1970.1152" timestamp="1588179994794" />
+    <state x="702" y="324" width="506" height="385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591182850089">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="702" y="324" width="506" height="385" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591182850089" />
     <state x="842" y="309" width="381" height="489" key="EnvironmentVariablesDialog" timestamp="1589373065611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -276,8 +287,8 @@
     <state x="1219" y="258" key="search.everywhere.popup/78.0.1970.1152@78.0.1970.1152" timestamp="1588185050590" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SD_practica2$Flask__backend_add_data_py_.coverage" NAME="Flask (backend/add_data.py) Coverage Results" MODIFIED="1591031625371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sd_practica2$SD_practica2.coverage" NAME="SD_practica2 Coverage Results" MODIFIED="1590590329578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SD_practica2$SD_practica2.coverage" NAME="SD_practica2 Coverage Results" MODIFIED="1591139902849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/SD_practica2$Flask__backend_add_data_py_.coverage" NAME="Flask (backend/add_data.py) Coverage Results" MODIFIED="1591031625371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
