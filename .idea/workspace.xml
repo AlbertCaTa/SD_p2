@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="37f40782-c415-4406-9764-6001a6d5cdd4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bDuGsp58r78p9PwxF4ivhmJqoV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/app.py" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Albert\Desktop\UNI\SD_practica2" />
+      <recent name="C:\Users\Albert\Desktop\UNI\SD_practica2\backend\resources" />
+      <recent name="C:\Users\Albert\Desktop\UNI\SD_practica2\assets" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.SD_practica2">
+    <configuration name="SD_practica2" type="PythonConfigurationType" factoryName="Python">
+      <module name="SD_practica2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Albert\Anaconda3\envs\sd\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="add_data" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="SD_practica2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/add_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flask (backend/add_data.py)" type="Python.FlaskServer" nameIsGenerated="true">
+      <module name="SD_practica2" />
+      <option name="target" value="$PROJECT_DIR$/backend/add_data.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Flask server.Flask (backend/add_data.py)" />
+      <item itemvalue="Python.add_data" />
+      <item itemvalue="Python.SD_practica2" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="37f40782-c415-4406-9764-6001a6d5cdd4" name="Default Changelist" comment="" />
+      <created>1588178893033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588178893033</updated>
+      <workItem from="1588178898566" duration="869000" />
+      <workItem from="1588179793025" duration="1338000" />
+      <workItem from="1588181152198" duration="8338000" />
+      <workItem from="1588778268986" duration="5637000" />
+      <workItem from="1588783933507" duration="2807000" />
+      <workItem from="1589370852946" duration="967000" />
+      <workItem from="1589373194273" duration="1073000" />
+      <workItem from="1589381486303" duration="5673000" />
+      <workItem from="1589387202770" duration="3181000" />
+      <workItem from="1589390400245" duration="522000" />
+      <workItem from="1589391295033" duration="3199000" />
+      <workItem from="1589645749043" duration="5003000" />
+      <workItem from="1589896209458" duration="381000" />
+      <workItem from="1590503302381" duration="13167000" />
+      <workItem from="1590585592934" duration="2742000" />
+      <workItem from="1590588368258" duration="145000" />
+      <workItem from="1590588673536" duration="7000" />
+      <workItem from="1590588692334" duration="23000" />
+      <workItem from="1590588747522" duration="140000" />
+      <workItem from="1590589084468" duration="6105000" />
+      <workItem from="1591025357795" duration="83000" />
+      <workItem from="1591025575931" duration="329000" />
+      <workItem from="1591025918722" duration="1854000" />
+      <workItem from="1591027820765" duration="3439000" />
+      <workItem from="1591031275324" duration="1276000" />
+      <workItem from="1591032564003" duration="23520000" />
+      <workItem from="1591104780334" duration="24022000" />
+      <workItem from="1591136215323" duration="958000" />
+      <workItem from="1591137188187" duration="4811000" />
+      <workItem from="1591177176415" duration="246000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1077" y="230" key="#Inspections" timestamp="1591058890005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1077" y="230" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1591058890005" />
+    <state x="1183" y="255" key="#Inspections/78.0.1970.1152@78.0.1970.1152" timestamp="1588179821131" />
+    <state x="1272" y="172" key="#SD_practica2" timestamp="1588179719990">
+      <screen x="78" y="0" width="1970" height="1152" />
+    </state>
+    <state x="1272" y="172" key="#SD_practica2/78.0.1970.1152@78.0.1970.1152" timestamp="1588179719990" />
+    <state x="669" y="115" key="#add_data" timestamp="1589372867315">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="669" y="115" key="#add_data/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589372867315" />
+    <state x="429" y="209" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591137209229">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="429" y="209" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589373165955" />
+    <state x="429" y="209" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591137209229" />
+    <state x="518" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog/78.0.1970.1152@78.0.1970.1152" timestamp="1588179994794" />
+    <state x="842" y="309" width="381" height="489" key="EnvironmentVariablesDialog" timestamp="1589373065611">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="842" y="309" width="381" height="489" key="EnvironmentVariablesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589373065611" />
+    <state x="746" y="299" key="FileChooserDialogImpl" timestamp="1591137208508">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="746" y="299" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591137208508" />
+    <state x="843" y="331" key="FileChooserDialogImpl/78.0.1970.1152@78.0.1970.1152" timestamp="1588179988760" />
+    <state width="928" height="397" key="GridCell.Tab.0.bottom" timestamp="1591142941925">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="469" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589374268652" />
+    <state width="928" height="397" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591142941925" />
+    <state width="1927" height="398" key="GridCell.Tab.0.bottom/78.0.1970.1152@78.0.1970.1152" timestamp="1588786743009" />
+    <state width="928" height="397" key="GridCell.Tab.0.center" timestamp="1591142941923">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="469" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589374268652" />
+    <state width="928" height="397" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591142941923" />
+    <state width="1927" height="398" key="GridCell.Tab.0.center/78.0.1970.1152@78.0.1970.1152" timestamp="1588786743009" />
+    <state width="928" height="397" key="GridCell.Tab.0.left" timestamp="1591142941923">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="469" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589374268652" />
+    <state width="928" height="397" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591142941923" />
+    <state width="1927" height="398" key="GridCell.Tab.0.left/78.0.1970.1152@78.0.1970.1152" timestamp="1588786743009" />
+    <state width="928" height="397" key="GridCell.Tab.0.right" timestamp="1591142941924">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="469" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589374268652" />
+    <state width="928" height="397" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591142941924" />
+    <state width="1927" height="398" key="GridCell.Tab.0.right/78.0.1970.1152@78.0.1970.1152" timestamp="1588786743009" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1591062969543">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591062969543" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1591062969543">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591062969543" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1591062969543">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591062969543" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1591062969543">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591062969543" />
+    <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1588785243776">
+      <screen x="78" y="0" width="1970" height="1152" />
+    </state>
+    <state width="189" height="457" key="HiddenNamespacesPopup/78.0.1970.1152@78.0.1970.1152" timestamp="1588785243776" />
+    <state x="565" y="168" key="SettingsEditor" timestamp="1590590140248">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="565" y="168" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589373156808" />
+    <state x="565" y="168" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1590590140248" />
+    <state x="658" y="186" key="SettingsEditor/78.0.1970.1152@78.0.1970.1152" timestamp="1588183251844" />
+    <state x="1112" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1591117385582">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1112" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591117385582" />
+    <state x="1219" y="258" key="search.everywhere.popup/78.0.1970.1152@78.0.1970.1152" timestamp="1588185050590" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SD_practica2$Flask__backend_add_data_py_.coverage" NAME="Flask (backend/add_data.py) Coverage Results" MODIFIED="1591031625371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sd_practica2$SD_practica2.coverage" NAME="SD_practica2 Coverage Results" MODIFIED="1590590329578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SD_practica2$SD_practica2.coverage" NAME="SD_practica2 Coverage Results" MODIFIED="1591139902849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+  </component>
+</project>
