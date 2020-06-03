@@ -1,25 +1,28 @@
 from flask_restful import Resource, Api, reqparse
 
 from models.account import AccountsModel, auth
+from lock import lock
 
 
 class Login(Resource):
     @auth.login_required(role='admin')
     def get(self):
-        accounts = AccountsModel.find_all()
-        return {'accounts': list(map(lambda x: x.json(), accounts))}, 200 if accounts else 404
+        with lock.lock:
+            accounts = AccountsModel.find_all()
+            return {'accounts': list(map(lambda x: x.json(), accounts))}, 200 if accounts else 404
 
     def post(self):
         data = self.parser()
-        acc = AccountsModel.find_by_username(data['username'])
-        if not acc:
-            return {'message' : 'username not in db'}, 404
-        else:
-            token = acc.generate_auth_token()
-            if acc.verify_password(data["password"]):
-                 return {'token': token.decode('ascii')}, 200
+        with lock.lock:
+            acc = AccountsModel.find_by_username(data['username'])
+            if not acc:
+                return {'message' : 'username not in db'}, 404
             else:
-                return {'message': "password invalid"}, 400
+                token = acc.generate_auth_token()
+                if acc.verify_password(data["password"]):
+                     return {'token': token.decode('ascii')}, 200
+                else:
+                    return {'message': "password invalid"}, 400
 
     @auth.login_required(role='admin')
     def delete(self):

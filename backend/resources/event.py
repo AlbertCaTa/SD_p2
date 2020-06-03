@@ -4,55 +4,59 @@ from flask_restful import Resource, Api, reqparse
 
 from flask_httpauth import HTTPBasicAuth
 from flask import g
+from lock import lock
 
 class Event(Resource):
     def get(self, id):
-        event = EventModel.find_by_id(id)
-        if event:
-            return {'event': event.json()}, 200
-        else:
-            return {"message": "Not found"}, 404
+        with lock.lock:
+            event = EventModel.find_by_id(id)
+            if event:
+                return {'event': event.json()}, 200
+            else:
+                return {"message": "Not found"}, 404
 
     @auth.login_required(role='admin')
     def post(self, id=None):
         data = self.parser()
+        with lock.lock:
+            if id and EventModel.find_by_id(id):
+                return {'message': "Event with id [{}] already exists".format(id)}, 404
+            else:
+                event = EventModel(data['name'], data['place'], data['city'], data['date'], data['price'],
+                                   data['available_tickets'])
+                print(event)
+                try:
+                    event.save_to_db()
+                except Exception as e:
+                    print(e)
+                    return {"message": 'error'}, 500
 
-        if id and EventModel.find_by_id(id):
-            return {'message': "Event with id [{}] already exists".format(id)}, 404
-        else:
-            event = EventModel(data['name'], data['place'], data['city'], data['date'], data['price'],
-                               data['available_tickets'])
-            print(event)
-            try:
-                event.save_to_db()
-            except Exception as e:
-                print(e)
-                return {"message": 'error'}, 500
-
-            return event.json(), 201
+                return event.json(), 201
 
     @auth.login_required(role='admin')
     def delete(self, id):
-        event = EventModel.find_by_id(id)
-        if event:
-            event.delete_from_db()
-            return {'message': 'Event deleted'}, 200
-        else:
-            return {'message': "Event not found"}, 404
+        with lock.lock:
+            event = EventModel.find_by_id(id)
+            if event:
+                event.delete_from_db()
+                return {'message': 'Event deleted'}, 200
+            else:
+                return {'message': "Event not found"}, 404
 
     @auth.login_required(role='admin')
     def put(self, id):
         data = self.parser()
-        event = EventModel.find_by_id(id)
+        with lock.lock:
+            event = EventModel.find_by_id(id)
 
-        if id and EventModel.find_by_id(id):
-            event.delete_from_db()
-            event = EventModel(data['name'], data['place'], data['city'], data['date'], data['price'],
-                               data['available_tickets'])
-            event.save_to_db()
-            return {'message': "Success, event added"}, 201
-        else:
-            return {'message': "Not found"}, 404
+            if id and EventModel.find_by_id(id):
+                event.delete_from_db()
+                event = EventModel(data['name'], data['place'], data['city'], data['date'], data['price'],
+                                   data['available_tickets'])
+                event.save_to_db()
+                return {'message': "Success, event added"}, 201
+            else:
+                return {'message': "Not found"}, 404
 
     def parser(self):
         parser = reqparse.RequestParser()  # create parameters parser from request
@@ -70,8 +74,9 @@ class Event(Resource):
 
 class EventList(Resource):
     def get(self):
-        events = EventModel.find_all()
-        return {'events': list(map(lambda x: x.json(), events))}, 200 if events else 404
+        with lock.lock:
+            events = EventModel.find_all()
+            return {'events': list(map(lambda x: x.json(), events))}, 200 if events else 404
     @auth.login_required(role='admin')
     def post(self):
         return {'message': "Not developed yet"}, 201

@@ -4,50 +4,55 @@ from flask_restful import Resource, Api, reqparse
 
 from flask_httpauth import HTTPBasicAuth
 from flask import g
+from lock import lock
 
 class Artist(Resource):
     def get(self, id):
-        artist = ArtistModel.find_by_id(id)
-        if artist:
-            return {'artist': artist.json()}, 200
-        else:
-            return {"message": "Not found"}, 404
+        with lock.lock:
+            artist = ArtistModel.find_by_id(id)
+            if artist:
+                return {'artist': artist.json()}, 200
+            else:
+                return {"message": "Not found"}, 404
 
     @auth.login_required(role='admin')
     def post(self, id=None):
-        data = self.parser()
-        artist = ArtistModel.find_by_id(id)
-        if artist:
-            return {'message': "Artist with id [{}] already exists".format(id)}, 404
-        else:
-            artist = ArtistModel(data['name'], data['country'], data['genre'])
-            try:
-                artist.save_to_db()
-            except:
-                return {"message": "db error"}, 500
-            return artist.json(), 201
+        with lock.lock:
+            data = self.parser()
+            artist = ArtistModel.find_by_id(id)
+            if artist:
+                return {'message': "Artist with id [{}] already exists".format(id)}, 404
+            else:
+                artist = ArtistModel(data['name'], data['country'], data['genre'])
+                try:
+                    artist.save_to_db()
+                except:
+                    return {"message": "db error"}, 500
+                return artist.json(), 201
 
     @auth.login_required(role='admin')
     def delete(self, id):
-        artist = ArtistModel.find_by_id(id)
-        if artist:
-            artist.delete_from_db()
-            return {'message': 'Artist deleted'}, 200
-        else:
-            return {'message': "Artist not found"}, 404
+        with lock.lock:
+            artist = ArtistModel.find_by_id(id)
+            if artist:
+                artist.delete_from_db()
+                return {'message': 'Artist deleted'}, 200
+            else:
+                return {'message': "Artist not found"}, 404
 
     @auth.login_required(role='admin')
     def put(self, id):
-        data = self.parser()
+        with lock.lock:
+            data = self.parser()
 
-        artist = ArtistModel.find_by_id(id)
-        if artist:
-            artist.delete_from_db()
-            artist = ArtistModel(data['name'], data['country'], data['genre'])
-            artist.save_to_db()
-            return {'message': "Success, artist added"}, 201
-        else:
-            return {'message': "Not found"}, 404
+            artist = ArtistModel.find_by_id(id)
+            if artist:
+                artist.delete_from_db()
+                artist = ArtistModel(data['name'], data['country'], data['genre'])
+                artist.save_to_db()
+                return {'message': "Success, artist added"}, 201
+            else:
+                return {'message': "Not found"}, 404
 
     def parser(self):
         parser = reqparse.RequestParser()  # create parameters parser from request
@@ -63,8 +68,9 @@ class Artist(Resource):
 
 class ArtistList(Resource):
     def get(self):
-        artists = ArtistModel.find_all()
-        return {'artists': list(map(lambda x: x.json(), artists))}, 200 if artists else 404
+        with lock.lock:
+            artists = ArtistModel.find_all()
+            return {'artists': list(map(lambda x: x.json(), artists))}, 200 if artists else 404
     @auth.login_required(role='user')
     def post(self):
         return {'message': "Not developed yet"}, 201

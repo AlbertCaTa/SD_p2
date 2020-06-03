@@ -21,7 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="37f40782-c415-4406-9764-6001a6d5cdd4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/artistEvents.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/artistEvents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/artists.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/artists.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/event.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/eventArtist.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/eventArtist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/orders.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +179,7 @@
       <workItem from="1591137188187" duration="4811000" />
       <workItem from="1591177176415" duration="246000" />
       <workItem from="1591182784616" duration="184000" />
-      <workItem from="1591182985419" duration="1604000" />
+      <workItem from="1591182985419" duration="2809000" />
     </task>
     <servers />
   </component>
