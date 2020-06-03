@@ -53,7 +53,7 @@ export default {
         username: this.username,
         password: this.password
       }
-      const path = `http://f02-eventright.herokuapp.com/login`
+      const path = `https://f02-eventright.herokuapp.com/login`
       axios.post(path, parameters)
         .then((res) => {
           this.logged = true
@@ -72,7 +72,7 @@ export default {
         })
     },
     getAccount () {
-      const path = `http://f02-eventright.herokuapp.com/account/` + this.username
+      const path = `https://f02-eventright.herokuapp.com/account/` + this.username
       axios.get(path)
         .then((res) => {
           this.is_admin = res.data.account.is_admin
@@ -112,7 +112,7 @@ export default {
         username: this.addUserForm.username,
         password: this.addUserForm.password
       }
-      const path = `http://f02-eventright.herokuapp.com/account/${parameters.username}`
+      const path = `https://f02-eventright.herokuapp.com/account/${parameters.username}`
       axios.post(path, parameters)
         .then((res) => {
           // this.username = parameters.username //to login instantly after signup
