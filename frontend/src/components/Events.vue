@@ -1,49 +1,57 @@
 <template>
-  <div>
+  <div style="background-color: #ffffff">
     <div id="events">
-      <button class="btn-primary" type="button" name="button" @click="viewCart()" v-if="!is_admin">
-            VIEW CART
-      </button>
-      <button class="btn-primary" type="button" name="button" @click="logIn()">
-            LOG IN
-      </button>
-      <button class="btn-primary" type="button" name="button" @click="logOut()">
-            LOG OUT
-      </button>
-      <button id="addEventBtn" class="btn-primary" type="button" name="button" @click="viewAddEvent()" v-if="is_admin">
-            ADD EVENT
-      </button>
-      <button id="addNewArtistBtn" class="btn-primary" type="button" name="button" @click="viewArtist()" v-if="is_admin">
-            GO TO ARTIST
-      </button>
-      <h1>EVENTS</h1>
-      <h2>AVAILABLE MONEY: {{ this.available_money }} </h2>
-      <h2>TOTAL TICKETS : {{ this.tickets_added }}</h2>
+      <div style="height: 30px"></div>
+      <div>
+        <h1 style="text-align: center;  font-family: 'Oswald', Helvetica, sans-serif;  font-size: 80px;  transform: skewY(-10deg);  letter-spacing: 4px;  word-spacing: -8px;  color: #ff6347;  text-shadow:     -1px -1px 0 firebrick,    -2px -2px 0 firebrick,    -3px -3px 0 firebrick,    -4px -4px 0 firebrick,    -5px -5px 0 firebrick,    -6px -6px 0 firebrick,    -7px -7px 0 firebrick,    -8px -8px 0 firebrick,    -30px 20px 40px dimgrey">EVENTS</h1>
+      </div>
+      <div style="height: 20px"></div>
+      <div style="background-color: #ff6347" >
+        <h4 class="ml-3" style="display: inline-block">Available money: {{ this.available_money }} | Total tickets : {{ this.tickets_added }}</h4>
+        <div style="display: inline-block; float:right">
+          <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="viewCart()" v-if="!is_admin">
+                VIEW CART
+          </button>
+          <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="logIn()">
+                LOG IN
+          </button>
+          <button class="btn-primary btn-sm ml-1" type="button" name="button" @click="logOut()">
+                LOG OUT
+          </button>
+          <button id="addEventBtn" class="btn-primary btn-sm ml-1" type="button" name="button" @click="viewAddEvent()" v-if="is_admin">
+                ADD EVENT
+          </button>
+          <button id="addNewArtistBtn" class="btn-primary btn-sm ml-1 mr-1" type="button" name="button" @click="viewArtist()" v-if="is_admin">
+                GO TO ARTIST
+          </button>
+        </div>
+      </div>
       <div class="container-fluid">
         <div class="row">
           <div v-for="e in events" :key="e.id">
             <div id="eventCard" class="card ml-3 mt-3 mb-3 mr-3" style="width: 20rem;">
               <img class="card-img-top" src="../assets/event.png" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">{{ e.name }}</h5>
-                <h6 class="card-subtitle"> Invited artists :</h6>
-                <h6 class="card-subtitle" v-for="a in e.artists" :key="a.id">{{ a.name }}, </h6>
-                <p class="card-text">City : {{ e.city }}</p>
-                <p class="card-text">Address : {{ e.place }}</p>
-                <p class="card-text">Date : {{ e.date }}</p>
-                <p class="card-text">Price : {{ e.price }}$</p>
-                <p class="card-text">Tickets available : {{ e.total_available_tickets  }}</p>
+                <h5 class="card-title mb-3"><b> {{ e.name }} </b></h5>
+                <h6 class="card-subtitle"> Invited artists :
+                  <i class="card-subtitle" v-for="a in e.artists" :key="a.id">{{ a.name }}, </i>
+                </h6>
+                <h6 class="card-text">City : {{ e.city }}</h6>
+                <h6 class="card-text">Address : {{ e.place }}</h6>
+                <h6 class="card-text">Date : {{ e.date }}</h6>
+                <h6 class="card-text">Price : {{ e.price }}$</h6>
+                <h6 class="card-text">Tickets available : {{ e.total_available_tickets  }}</h6>
                 <a href="#" class="btn btn-primary" @click="addToCart(e)" v-if="!is_admin">Add to cart</a>
-                <button id="submitArtist" class="btn-success" type="button" name="button" @click="openAddArtist(e)" v-if="is_admin">
+                <button id="submitArtist" class="btn-success btn-sm" type="button" name="button" @click="openAddArtist(e)" v-if="is_admin">
                       Add Artist to Event
                 </button>
-                <button id="submitDeleteArtist" class="btn-secondary" type="button" name="button" @click="openDeleteArtist(e)" v-if="is_admin">
+                <button id="submitDeleteArtist" class="btn-secondary btn-sm" type="button" name="button" @click="openDeleteArtist(e)" v-if="is_admin">
                       Delete Artist in Event
                 </button>
-                <button id="editEventBtn" class="btn-primary" type="button" name="button" @click="viewEditEvent(e)" v-if="is_admin">
+                <button id="editEventBtn" class="btn-primary btn-sm" type="button" name="button" @click="viewEditEvent(e)" v-if="is_admin">
                       EDIT EVENT
                 </button>
-                <button id="submitDeleteEvent" class="btn-danger" type="button" name="button" @click="deleteEvent(e)" v-if="is_admin">
+                <button id="submitDeleteEvent" class="btn-danger btn-sm" type="button" name="button" @click="deleteEvent(e)" v-if="is_admin">
                       Delete Event
                 </button>
               </div>
@@ -78,38 +86,43 @@
       </div>
     </div>
     <div id="carts" style="display: none"><!--https://designmodo.com/demo/shopping-cart/-->
-      <button class="btn-primary" type="button" name="button" @click="viewEvents()">
-              VIEW EVENTS
-      </button>
-      <h1>CART</h1>
+      <div style="height: 30px"></div>
+      <div>
+        <h1 style="text-align: center;  font-family: 'Oswald', Helvetica, sans-serif;  font-size: 80px;  transform: skewY(-10deg);  letter-spacing: 4px;  word-spacing: -8px;  color: #ff6347;  text-shadow:     -1px -1px 0 firebrick,    -2px -2px 0 firebrick,    -3px -3px 0 firebrick,    -4px -4px 0 firebrick,    -5px -5px 0 firebrick,    -6px -6px 0 firebrick,    -7px -7px 0 firebrick,    -8px -8px 0 firebrick,    -30px 20px 40px dimgrey">CART</h1>
+      </div>
+      <div style="background-color: #ff6347" >
+        <h4 class="ml-3" style="display: inline-block">Available money: {{ this.available_money }} | Total tickets : {{ this.tickets_added }}</h4>
+        <div style="display: inline-block; float:right">
+          <button class="btn-primary ml-1 btn-sm" type="button" name="button" @click="viewEvents()">
+            VIEW EVENTS
+          </button>
+          <button class="btn-primary ml-1 mr-1 btn-sm" type="button" name="button" @click="finalizePucharse()" :disabled="cartItems.length == 0">
+            FINALIZE PUCHARSE
+          </button>
+        </div>
+      </div>
+      <div style="height: 20px"></div>
       <link rel="stylesheet" type="text/css" href="/static/cart.css">
-      <div class="shopping-cart">
+      <div class="shopping-cart ml-3">
         <!-- Title -->
         <div class="title">
           Shopping Bag | Total price : {{ this.total_price }} $
-          <button type="button" name="button" @click="finalizePucharse()" :disabled="cartItems.length == 0">
-              Finalize pucharse
-          </button>
         </div>
         <!-- Product -->
-        <div class="item" v-for="item in cartItems" :key="item.name">
-          <div class="buttons">
-            <span class="delete-btn" @click="deleteCart(item)">X</span>
+        <div class="item mt-3 mb-3" v-for="item in cartItems" :key="item.name">
+          <a href="#" style="display:inline-block; color:black" @click="deleteCart(item)"><b>X</b></a>
+          <div style="display: inline-block">
+            <span>{{ item.event_name }} | <i>Price: ${{item.price}}</i></span>
           </div>
-
-          <div class="image">
-            <span>{{ item.event_name }}</span>
-          </div>
-          <div class="quantity">
-            <button class="plus-btn" type="button" name="button" @click="plusCart(item)">
+          <div class="quantity" style="display: inline-block">
+            <button class="btn-success btn-sm" type="button" name="button" @click="plusCart(item)">
               +
             </button>
             <span> {{ item.quantity }} </span>
-            <button class="minus-btn" type="button" name="button" @click="minusCart(item)">
+            <button class="btn-danger btn-sm" type="button" name="button" @click="minusCart(item)">
               -
             </button>
           </div>
-          <div class="total-price"> ${{item.price}} </div>
         </div>
       </div>
     </div>
@@ -175,13 +188,26 @@
     </div>
     <div id="artists" style="display: none">
       <div id="artistCatalog">
-
-        <button id="goToEvents" class="btn-primary" type="button" name="button" @click="viewEvents()">
+        <div style="height: 30px"></div>
+        <div>
+          <h1 style="text-align: center;  font-family: 'Oswald', Helvetica, sans-serif;  font-size: 80px;  transform: skewY(-10deg);  letter-spacing: 4px;  word-spacing: -8px;  color: #ff6347;  text-shadow:     -1px -1px 0 firebrick,    -2px -2px 0 firebrick,    -3px -3px 0 firebrick,    -4px -4px 0 firebrick,    -5px -5px 0 firebrick,    -6px -6px 0 firebrick,    -7px -7px 0 firebrick,    -8px -8px 0 firebrick,    -30px 20px 40px dimgrey">
+            ARTISTS
+          </h1>
+        </div>
+        <div style="height: 20px"></div>
+        <div style="background-color: #ff6347" >
+          <h4 style="display: inline-block">Available money: {{ this.available_money }} | Total tickets : {{ this.tickets_added }}</h4>
+          <div style="display: inline-block; float:right">
+            <button id="goToEvents" class="btn-primary btn-sm" type="button" name="button" @click="viewEvents()">
               GO TO EVENTS
-        </button>
-        <button id="editNewArtistBtn" class="btn-primary" type="button" name="button" @click="viewAddNewArtist()">
+            </button>
+            <button id="editNewArtistBtn" class="btn-primary btn-sm mr-1" type="button" name="button" @click="viewAddNewArtist()">
               NEW ARTIST
-        </button>
+            </button>
+          </div>
+        </div>
+        <div style="height: 20px"></div>
+
         <div class="container-fluid d-flex flex-wrap pt-2 pb-3">
           <div class="row">
             <div v-for="a in artists" :key="a.id">
@@ -191,10 +217,10 @@
                   <h5 class="card-title">{{ a.name }}</h5>
                   <p class="card-text">Country : {{ a.country }}</p>
                   <p class="card-text">Genre : {{ a.genre }}</p>
-                  <button id="openEditArtist" class="btn-success" type="button" name="button" @click="openEditArtist(a)">
+                  <button id="openEditArtist" class="btn-success btn-sm" type="button" name="button" @click="openEditArtist(a)">
                         Edit artist
                   </button>
-                  <button id="deleteGlobalArtist" class="btn-danger" type="button" name="button" @click="deleteGlobalArtist(a)">
+                  <button id="deleteGlobalArtist" class="btn-danger btn-sm" type="button" name="button" @click="deleteGlobalArtist(a)">
                         Delete artist
                   </button>
                 </div>
@@ -239,7 +265,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import axios from 'axios'
 export default {
@@ -308,7 +333,7 @@ export default {
         country: '',
         genre: ''
       },
-      is_admin: 0
+      is_admin: 1
     }
   },
   methods: {
