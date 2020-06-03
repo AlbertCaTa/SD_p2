@@ -98,8 +98,7 @@
           </div>
 
           <div class="image">
-            <img class="card-img-top" src="../assets/artist.png" alt="Card image cap" width="50" height="50">
-            {{ item.event_name }}
+            <span>{{ item.event_name }}</span>
           </div>
           <div class="quantity">
             <button class="plus-btn" type="button" name="button" @click="plusCart(item)">
