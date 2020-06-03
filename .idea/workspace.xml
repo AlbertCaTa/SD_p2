@@ -20,10 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37f40782-c415-4406-9764-6001a6d5cdd4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/static/css/app.de17b3fc8ee7ae7d7c3640e92e4dc6af.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/css/app.de17b3fc8ee7ae7d7c3640e92e4dc6af.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/img/artist.f7e3815.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/img/event.cb44ee0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/js/app.dba7284d2b360ecf15d8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/js/app.dba7284d2b360ecf15d8.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/js/manifest.2ae2e69a05c33dfc65f8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/js/vendor.6cdc6aea2e480c47a92c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/js/vendor.6cdc6aea2e480c47a92c.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/vendor.6cdc6aea2e480c47a92c.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/static/js/vendor.6cdc6aea2e480c47a92c.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/static/.gitkeep" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +184,7 @@
       <workItem from="1591137188187" duration="4811000" />
       <workItem from="1591177176415" duration="246000" />
       <workItem from="1591182784616" duration="184000" />
-      <workItem from="1591182985419" duration="414000" />
+      <workItem from="1591182985419" duration="1119000" />
     </task>
     <servers />
   </component>
